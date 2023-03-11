@@ -1,9 +1,10 @@
 from django.urls import path
 from . import views
 
+app_name = 'posts'
+
 urlpatterns = [
-    # Основная маска сайта ждёт любую переменную и перенесёт на страницу группировки постов
-    path('group/<slug:slug>/', views.group_posts), 
+    path("group/<slug>/", views.group_posts, name="group-posts"),
     # Главная страница
     path('', views.index),
 ] 
